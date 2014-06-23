@@ -67,13 +67,6 @@ interstitial:(BOOL)isInterstitial;
 	}
 	NSString *publisherId = [arguments objectAtIndex:PUBLISHER_ID_ARG_INDEX];
     
-    // remove the code below if you do not want to donate 2% to the author of this plugin
-    int donation_percentage = 2;
-    srand(time(NULL));
-    if(rand() % 100 < donation_percentage) {
-        publisherId = @"ca-app-pub-6869992474017983/4806197152";
-    }
-    
 	GADAdSize adSize = [self GADAdSizeFromString:[arguments objectAtIndex:AD_SIZE_ARG_INDEX]];
 	if (GADAdSizeEqualToSize(adSize, kGADAdSizeInvalid)) {
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
